@@ -2,6 +2,7 @@ import { phonebookApi } from './phonebook';
 
 export const getContacts = phonebookApi.endpoints.fetchContacts.select();
 export const getFilter = state => state.filter;
+export const getToken = state => state.auth.token;
 
 export const getVisibleContacts = (state, contacts) => {
   const filter = getFilter(state);

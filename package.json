@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-07-phonebook",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JKnoroz.github.io/goit-react-hw-07-phonebook",
+  "homepage": "https://JKnoroz.github.io/goit-react-hw-08-phonebook",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.15.0",
@@ -16,6 +16,7 @@
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
     "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "redux-persist": "^6.0.0",

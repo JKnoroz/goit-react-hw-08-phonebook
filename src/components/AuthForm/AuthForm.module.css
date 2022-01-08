@@ -1,0 +1,22 @@
+.label {
+  font-weight: 700;
+  color: darkslategrey;
+}
+
+.input {
+  margin: 10px;
+  height: 25px;
+}
+
+.button {
+  background-color: slategray;
+  color: honeydew;
+  font-weight: 700;
+  padding: 5px;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: rgba(250, 127, 45, 0.842);
+}

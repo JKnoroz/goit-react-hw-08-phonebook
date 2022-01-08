@@ -1,20 +1,45 @@
-import ContactForm from './components/ContactForm/ContactForm';
-import Filter from './components/Filter/Filter';
-
 import './App.css';
-import { ContactsContainer } from './components/ContactsContainer/ContactsContainer';
+import { Route, Routes } from 'react-router-dom';
+import AuthView from 'views/AuthView';
+import ContactsView from 'views/ContactsView';
+import { useGetCurrentUserQuery } from 'redux/phonebook';
+import PrivateRoute from 'components/PrivateRoad';
+import PublicRoute from 'components/PublicRoad';
+import UserMenu from 'components/UserMenu';
 
 function App() {
+  const { isFetching } = useGetCurrentUserQuery();
   return (
-    <div className="App">
-      <div>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactsContainer />
-      </div>
-    </div>
+    <>
+      <UserMenu />
+      <>
+        {isFetching ? (
+          ''
+        ) : (
+          <>
+            <Routes>
+              <Route
+                path="contacts"
+                element={
+                  <PrivateRoute>
+                    <ContactsView />
+                  </PrivateRoute>
+                }
+              />
+
+              <Route
+                path="*"
+                element={
+                  <PublicRoute restricted={true}>
+                    <AuthView />
+                  </PublicRoute>
+                }
+              />
+            </Routes>
+          </>
+        )}
+      </>
+    </>
   );
 }
 
