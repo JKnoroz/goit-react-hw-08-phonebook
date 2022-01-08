@@ -1,0 +1,9 @@
+.label {
+  font-weight: 700;
+  color: darkslategrey;
+}
+
+.input {
+  margin: 10px;
+  height: 25px;
+}

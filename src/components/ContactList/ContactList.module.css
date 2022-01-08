@@ -1,0 +1,26 @@
+.list {
+  display: block;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  line-height: 2;
+
+  color: slategrey;
+}
+
+.deleteButton {
+  margin-left: 10px;
+  background-color: silver;
+  border: silver;
+  color: aliceblue;
+  border-radius: 10%;
+  padding: 3px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.deleteSpinner {
+  display: block;
+  position: relative;
+}
