@@ -1,6 +1,6 @@
-import ContactForm from './components/ContactForm/ContactForm';
-import Filter from './components/Filter/Filter';
-import { ContactsContainer } from './components/ContactsContainer/ContactsContainer';
+import ContactForm from '../components/ContactForm/ContactForm';
+import Filter from '../components/Filter/Filter';
+import { ContactsContainer } from '../components/ContactsContainer/ContactsContainer';
 
 export default function ContactsView() {
   return (

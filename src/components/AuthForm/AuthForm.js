@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { setCredentials } from '../../redux/auth/authSlice';
-import { useRegisterUserMutation, useLoginUserMutation } from 'redux/phonebook';
+import {
+  useRegisterUserMutation,
+  useLoginUserMutation,
+} from '../../redux/phonebook';
 import s from './AuthForm.module.css';
 
 function AuthForm() {
@@ -122,7 +125,7 @@ function AuthForm() {
                 setNameError(null);
               }}
               error={nameError && true}
-              helperText={nameError}
+              // helperText={nameError}
             ></input>
           </label>
         )}
@@ -132,8 +135,8 @@ function AuthForm() {
             type="tel"
             name="number"
             className={s.input}
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            // pattern="/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</>"
+            title="E-mail"
             required
             value={email}
             onChange={({ target }) => {
@@ -141,7 +144,7 @@ function AuthForm() {
               setEmailError(null);
             }}
             error={emailError && true}
-            helperText={emailError}
+            // helperText={emailError}
           ></input>
         </label>
         <label className={s.label}>
@@ -158,7 +161,7 @@ function AuthForm() {
               setPasswordError(null);
             }}
             error={passwordError && true}
-            helperText={passwordError}
+            // helperText={passwordError}
           ></input>
         </label>
         <button type="submit" className={s.button}>

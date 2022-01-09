@@ -1,8 +1,14 @@
-import { useLogOutUserMutation, useGetCurrentUserQuery } from 'redux/phonebook';
+import {
+  useLogOutUserMutation,
+  useGetCurrentUserQuery,
+} from '../../redux/phonebook';
 import { useSelector } from 'react-redux';
 
-import SubNavigation from 'components/SubNavigation';
-import { getIsLoggedIn, selectCurrentUser } from 'redux/auth/authSelectors';
+import SubNavigation from '../SubNavigation/SubNavigation';
+import {
+  getIsLoggedIn,
+  selectCurrentUser,
+} from '../../redux/auth/authSelectors';
 
 export default function UserMenu() {
   const isLoggedIn = useSelector(getIsLoggedIn);
