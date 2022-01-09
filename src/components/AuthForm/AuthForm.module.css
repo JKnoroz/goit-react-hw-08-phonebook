@@ -52,3 +52,8 @@
   padding: 50px;
   text-align: center;
 }
+
+.errorContainer {
+  color: red;
+  margin-top: 10px;
+}

@@ -34,7 +34,8 @@
   border-radius: 4px;
   min-width: 120px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .button:hover {
