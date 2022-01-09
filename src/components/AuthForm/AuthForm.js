@@ -37,9 +37,13 @@ function AuthForm() {
     let passedValidation = true;
 
     if (email === '') {
+      setEmailError('Enter email');
       toast('Enter email');
       passedValidation = false;
     } else if (!emailChek) {
+      setEmailError(
+        'Invalid email address. Valid e-mail can contain only latin letters, numbers, @ and .',
+      );
       toast(
         'Invalid email address. Valid e-mail can contain only latin letters, numbers, @ and .',
       );
@@ -48,9 +52,11 @@ function AuthForm() {
     }
 
     if (password === '') {
+      setPasswordError('Enter password');
       toast('Enter password');
       passedValidation = false;
     } else if (password.length < 7) {
+      setPasswordError('Password too short');
       toast('Password too short');
       passedValidation = false;
       // setPassword('');
@@ -61,6 +67,7 @@ function AuthForm() {
     }
 
     if (name === '') {
+      setNameError('Enter name');
       toast('Enter name');
       passedValidation = false;
     }
@@ -128,7 +135,7 @@ function AuthForm() {
                 setName(target.value);
                 setNameError(null);
               }}
-              // error={nameError && true}
+              error={nameError && true}
               // helperText={nameError}
             ></input>
           </label>
@@ -136,7 +143,7 @@ function AuthForm() {
         <label className={s.label}>
           E-mail:
           <input
-            type="tel"
+            type="email"
             name="number"
             className={s.input}
             // pattern="/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</>"
@@ -147,7 +154,7 @@ function AuthForm() {
               setEmail(target.value);
               setEmailError(null);
             }}
-            // error={emailError && true}
+            error={emailError && true}
             // helperText={emailError}
           ></input>
         </label>
@@ -164,7 +171,7 @@ function AuthForm() {
               setPassword(target.value);
               setPasswordError(null);
             }}
-            // error={passwordError && true}
+            error={passwordError && true}
             // helperText={passwordError}
           ></input>
         </label>
@@ -174,6 +181,7 @@ function AuthForm() {
       </form>
       <div className={s.errorContainer}>
         {error?.status === 400 && 'User not found or password incorrect'}
+        {error?.status === 401 && 'Please authenticate'}
       </div>
       <ToastContainer />
     </div>

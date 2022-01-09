@@ -35,7 +35,7 @@ export default function UserMenu() {
             )}
           </div>
           <div className={s.user}>
-            {isLoggedIn && (
+            {isLoggedIn && user && (
               <>
                 <li>{user.name}</li>
                 <li>{user.email}</li>
