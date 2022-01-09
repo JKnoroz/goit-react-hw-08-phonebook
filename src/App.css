@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+h2 {
+  font-size: 18px;
+  color: slategrey;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 10px;
+}

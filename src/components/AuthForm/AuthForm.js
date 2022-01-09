@@ -102,8 +102,8 @@ function AuthForm() {
   }
 
   return (
-    <>
-      {location.pathname === '/login' ? 'Sign in' : 'Registration'}
+    <div className={s.formContainer}>
+      <h2>{location.pathname === '/login' ? 'Sign in' : 'Registration'}</h2>
       <form
         onSubmit={
           location.pathname === '/login' ? handleSubmitSignin : handleSubmitReg
@@ -168,8 +168,8 @@ function AuthForm() {
           {location.pathname === '/login' ? 'Sign in' : 'Submit'}
         </button>
       </form>
-      {error?.status === 400 && 'User not found or password incorect'}
-    </>
+      {error?.status === 400 && 'User not found or password incorrect'}
+    </div>
   );
 }
 

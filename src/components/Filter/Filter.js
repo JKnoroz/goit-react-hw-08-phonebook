@@ -10,16 +10,18 @@ function Filter() {
   const changeFilter = e => dispatch(actions.filterContacts(e.target.value));
 
   return (
-    <label className={s.label}>
-      Filter{' '}
-      <input
-        type="text"
-        className={s.input}
-        name="filter"
-        value={filterValue}
-        onChange={changeFilter}
-      />
-    </label>
+    <div className={s.filterContainer}>
+      <label className={s.label}>
+        Filter{' '}
+        <input
+          type="text"
+          className={s.input}
+          name="filter"
+          value={filterValue}
+          onChange={changeFilter}
+        />
+      </label>
+    </div>
   );
 }
 

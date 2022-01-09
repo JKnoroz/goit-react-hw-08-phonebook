@@ -1,9 +1,37 @@
 .label {
-  font-weight: 700;
-  color: darkslategrey;
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgb(75, 126, 126);
+  text-align: left;
 }
 
 .input {
-  margin: 10px;
-  height: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid cadetblue;
+}
+
+.filterContainer {
+  display: block;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  border: slategrey;
+  border-radius: 4px;
+  padding: 10px 50px;
+  text-align: center;
 }

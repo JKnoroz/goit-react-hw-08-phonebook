@@ -10,6 +10,8 @@ import {
   selectCurrentUser,
 } from '../../redux/auth/authSelectors';
 
+import s from './UserMenu.module.css';
+
 export default function UserMenu() {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(selectCurrentUser);
@@ -20,19 +22,25 @@ export default function UserMenu() {
       {isFetching ? (
         ''
       ) : (
-        <>
-          {isLoggedIn ? (
-            <button onClick={logOut}>Log out</button>
-          ) : (
-            <SubNavigation />
-          )}
-          {isLoggedIn && (
-            <>
-              {user.name}
-              {user.email}
-            </>
-          )}
-        </>
+        <div className={s.userMenu}>
+          <div className={s.logout}>
+            {isLoggedIn ? (
+              <button className={s.logoutButton} onClick={logOut}>
+                Log out
+              </button>
+            ) : (
+              <SubNavigation />
+            )}
+          </div>
+          <div className={s.user}>
+            {isLoggedIn && (
+              <>
+                <li>{user.name}</li>
+                <li>{user.email}</li>
+              </>
+            )}
+          </div>
+        </div>
       )}
     </>
   );

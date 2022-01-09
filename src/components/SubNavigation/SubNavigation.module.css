@@ -1,0 +1,28 @@
+.firstMenu {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: cadetblue;
+}
+
+.subNavigationContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.subLink {
+  text-decoration: none;
+  color: rgb(70, 74, 78);
+  font-family: Arial;
+  font-weight: 700;
+  margin: 0 15px;
+}
+
+.active {
+  color: white;
+}
+
+.subLink:not(:last-child) {
+  margin-right: 10px;
+}

@@ -1,22 +1,53 @@
 .label {
-  font-weight: 700;
-  color: darkslategrey;
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgb(75, 126, 126);
+  text-align: left;
 }
 
 .input {
-  margin: 10px;
-  height: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid cadetblue;
 }
 
 .button {
-  background-color: slategray;
+  background-color: cadetblue;
+  border-color: cadetblue;
   color: honeydew;
   font-weight: 700;
-  padding: 5px;
+  font-size: medium;
+  padding: 7px;
+  border-radius: 4px;
   min-width: 120px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .button:hover {
-  border-color: rgba(250, 127, 45, 0.842);
+  border-color: rgba(114, 210, 248, 0.842);
+}
+
+.formContainer {
+  display: block;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: slategrey;
+  border-radius: 4px;
+  padding: 10px 50px;
+  text-align: center;
 }

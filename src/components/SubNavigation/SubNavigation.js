@@ -4,7 +4,7 @@ import s from './SubNavigation.module.css';
 export default function SubNavigation() {
   const activeClass = [s.subLink, s.active];
   return (
-    <>
+    <div className={s.firstMenu}>
       <NavLink
         to="login"
         className={({ isActive }) =>
@@ -21,6 +21,6 @@ export default function SubNavigation() {
       >
         Registration
       </NavLink>
-    </>
+    </div>
   );
 }
