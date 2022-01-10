@@ -9,11 +9,9 @@ export const phonebookApi = createApi({
     baseUrl: URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
-
       if (token) {
         headers.set('authorization', `Bearer ${token}`);
       }
-
       return headers;
     },
   }),
@@ -33,7 +31,13 @@ export const phonebookApi = createApi({
         }
         try {
           const respons = await baseQuery('/users/current');
+
+          if (respons.error.status === 401) {
+            return queryApi.dispatch.clearCredentials();
+          }
+
           queryApi.dispatch(setUser(respons.data));
+
           return respons;
         } catch (error) {
           return { data: error };
