@@ -14,9 +14,6 @@ function AuthForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [nameError, setNameError] = useState(null);
-  // const [emailError, setEmailError] = useState(null);
-  // const [passwordError, setPasswordError] = useState(null);
 
   const [registerUser] = useRegisterUserMutation();
   const [loginUser, { error }] = useLoginUserMutation();
@@ -37,29 +34,21 @@ function AuthForm() {
     let passedValidation = true;
 
     if (email === '') {
-      // setEmailError('Enter email');
       toast('Enter email');
       passedValidation = false;
     } else if (!emailChek) {
-      // setEmailError(
-      //   'Invalid email address. Valid e-mail can contain only latin letters, numbers, @ and .',
-      // );
       toast(
         'Invalid email address. Valid e-mail can contain only latin letters, numbers, @ and .',
       );
       passedValidation = false;
-      // setEmail('');
     }
 
     if (password === '') {
-      // setPasswordError('Enter password');
       toast('Enter password');
       passedValidation = false;
     } else if (password.length < 7) {
-      // setPasswordError('Password too short');
       toast('Password too short');
       passedValidation = false;
-      // setPassword('');
     }
 
     if (location.pathname === '/login') {
@@ -67,7 +56,6 @@ function AuthForm() {
     }
 
     if (name === '') {
-      // setNameError('Enter name');
       toast('Enter name');
       passedValidation = false;
     }
@@ -79,8 +67,6 @@ function AuthForm() {
     setName('');
     setEmail('');
     setPassword('');
-    // setEmailError(null);
-    // setPasswordError(null);
   }
 
   function handleSubmitReg(e) {
@@ -133,10 +119,7 @@ function AuthForm() {
               value={name}
               onChange={({ target }) => {
                 setName(target.value);
-                // setNameError(null);
               }}
-              // error={nameError && true}
-              // helperText={nameError}
             ></input>
           </label>
         )}
@@ -152,10 +135,7 @@ function AuthForm() {
             value={email}
             onChange={({ target }) => {
               setEmail(target.value);
-              // setEmailError(null);
             }}
-            // error={emailError && true}
-            // helperText={emailError}
           ></input>
         </label>
         <label className={s.label}>
@@ -169,10 +149,7 @@ function AuthForm() {
             value={password}
             onChange={({ target }) => {
               setPassword(target.value);
-              // setPasswordError(null);
             }}
-            // error={passwordError && true}
-            // helperText={passwordError}
           ></input>
         </label>
         <button type="submit" className={s.button}>
