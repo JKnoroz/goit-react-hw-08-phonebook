@@ -15,8 +15,6 @@ import s from './UserMenu.module.css';
 export default function UserMenu() {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(selectCurrentUser);
-  console.log(user);
-  console.log(isLoggedIn);
   const [logOut] = useLogOutUserMutation();
   const { isFetching } = useGetCurrentUserQuery();
   return (

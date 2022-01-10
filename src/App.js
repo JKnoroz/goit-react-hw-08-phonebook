@@ -9,8 +9,6 @@ import UserMenu from './components/UserMenu';
 
 function App() {
   const { isFetching } = useGetCurrentUserQuery();
-  // const { isSuccess } = useGetCurrentUserQuery();
-  console.log(useGetCurrentUserQuery());
   return (
     <>
       <UserMenu />
